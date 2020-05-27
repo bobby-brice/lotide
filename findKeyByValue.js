@@ -6,12 +6,10 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKeyByValue = function(bestTVShowsByGenre, value) {
-  for (const prop in bestTVShowsByGenre) {
-    if (bestTVShowsByGenre.hasOwnProperty(prop)) {
-      if (bestTVShowsByGenre[prop] === value) {
-        return prop;
-      }
+const findKeyByValue = function(object, value) {
+  for (const prop in object) {
+    if (object[prop] === value) {
+      return prop;
     }
   }
 };
