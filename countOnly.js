@@ -13,7 +13,6 @@ const assertEqual = function(actual, expected) {
 //The function should report back how many instances of each string were found in the allItems array of strings.
 
 const countOnly = function(allItems, itemsToCount) {
-  //use a for..in loop to iterate through the items and then use conditionals to ref items to count?
   const results = {};
 
   for (const item of allItems) {
@@ -25,6 +24,7 @@ const countOnly = function(allItems, itemsToCount) {
       }
     }
   }
+  console.log(results);
   return results;
 
 };
