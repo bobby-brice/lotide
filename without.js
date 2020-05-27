@@ -1,6 +1,4 @@
 //return a subset of a given array, removing unwanted elements
-//without([1, 2, 3], [1]) // => [2, 3]
-//without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
 const without = function(source, itemsToRemove) {
   console.log("source:" + source, "removes:" + itemsToRemove);
   return source.filter(i => !itemsToRemove.includes(i));
@@ -32,9 +30,5 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
-assertArraysEqual(
-  without([1,2,3], [1]),
-  [2,3]
-);
-
+assertArraysEqual(without([1,2,3], [1]),[2,3]);
 assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
