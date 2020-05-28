@@ -21,6 +21,7 @@ const assertArraysEqual = function(arr1, arr2) {
 
 const words = ["ground", "control", "to", "major", "tom"];
 const numbers = [1, 2, 3, 4, 5];
+
 const map = function(array, callback) {
   const results = [];
   for (let item of array) {
