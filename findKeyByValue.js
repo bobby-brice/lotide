@@ -12,6 +12,7 @@ const findKeyByValue = function(object, value) {
       return prop;
     }
   }
+  return undefined;
 };
 
 const bestTVShowsByGenre = {
