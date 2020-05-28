@@ -1,18 +1,8 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
   let key = Object.keys(object1); //->[ 'a', 'b' ]
   // console.log(key);
   if (Object.keys(object1).length !== Object.keys(object2).length) return false;
-  
+
   for (const prop of key) {
     // console.log("prop: " + prop, "key: " + key);
     if (object1[prop] !== object2[prop]) {
@@ -23,6 +13,16 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+const assertObjectsEqual = function(actual, expected) {
+  // console.log("actual: " + actual);
+  const inspect = require('util').inspect;
+  
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🔴🔴🔴 Assertion Failed: ${inspect(actual)} === ${inspect(expected)}`);
+  }
+};
 
 const ab = {
   a: "1",
@@ -33,6 +33,7 @@ const ba = {
   a: "1"
 };
 eqObjects(ab, ba); // => true
+console.log(eqObjects(ab, ba));
 
 const abc = {
   a: "1",
@@ -40,7 +41,5 @@ const abc = {
   c: "3"
 };
 // eqObjects(ab, abc); // => false
-
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abc), false);
-
+assertObjectsEqual(eqObjects(ab, ba), true);
+assertObjectsEqual(eqObjects(ab, abc), true);
