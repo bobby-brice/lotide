@@ -5,8 +5,10 @@ const countLetters = function(sentence) {
     // console.log("letters: " + letters, "sentence: " + normalized);
     if (countObj[letters]) {
       countObj[letters] += 1;
+      console.log("countObj[letters]:" + countObj, "letters" + letters);
     } else {
       countObj[letters] = 1;
+      console.log("countObj[letters]:" + countObj[letters]);
     }
   }
   return countObj;
